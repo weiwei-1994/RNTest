@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomePage from "../page/HomePage"
 import SettingPage from "../page/SettingPage"
+import SchedulePage from "../page/SchedulePage"
 
 const Stack = createNativeStackNavigator();
 const NativeModule = NativeModules.NativeModule;
@@ -32,6 +33,13 @@ function APP(){
                 options={{
                     headerTitle:"插件设置页"
                 }}/>
+                <Stack.Screen
+                name='Schedule'
+                component={SchedulePage}
+                options={{
+                    headerTitle:"插件定时列表页"
+                }}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

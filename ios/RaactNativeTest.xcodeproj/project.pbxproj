@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3EAB185A283B6A4300B0C33F /* NativeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB1859283B6A4300B0C33F /* NativeNameController.m */; };
 		3EDFC7602834D3F6008E95A9 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC75F2834D3F6008E95A9 /* HomeController.m */; };
 		3EDFC7632834FB67008E95A9 /* ReactNativeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC7622834FB67008E95A9 /* ReactNativeController.m */; };
 		3EDFC76628363633008E95A9 /* NativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC76528363633008E95A9 /* NativeModule.m */; };
@@ -42,6 +43,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RaactNativeTest/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-RaactNativeTest-RaactNativeTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaactNativeTest-RaactNativeTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-RaactNativeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaactNativeTest.debug.xcconfig"; path = "Target Support Files/Pods-RaactNativeTest/Pods-RaactNativeTest.debug.xcconfig"; sourceTree = "<group>"; };
+		3EAB1858283B6A4300B0C33F /* NativeNameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeNameController.h; sourceTree = "<group>"; };
+		3EAB1859283B6A4300B0C33F /* NativeNameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeNameController.m; sourceTree = "<group>"; };
 		3EDFC75E2834D3F6008E95A9 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		3EDFC75F2834D3F6008E95A9 /* HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		3EDFC7612834FB67008E95A9 /* ReactNativeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeController.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				3EDFC76528363633008E95A9 /* NativeModule.m */,
 				3EDFC76728364E78008E95A9 /* RNNativeView.h */,
 				3EDFC76828364E78008E95A9 /* RNNativeView.m */,
+				3EAB1858283B6A4300B0C33F /* NativeNameController.h */,
+				3EAB1859283B6A4300B0C33F /* NativeNameController.m */,
 			);
 			name = RaactNativeTest;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				3EDFC7602834D3F6008E95A9 /* HomeController.m in Sources */,
 				3EDFC76928364E78008E95A9 /* RNNativeView.m in Sources */,
 				3EDFC76628363633008E95A9 /* NativeModule.m in Sources */,
+				3EAB185A283B6A4300B0C33F /* NativeNameController.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

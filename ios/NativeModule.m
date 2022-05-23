@@ -6,6 +6,7 @@
 //
 
 #import "NativeModule.h"
+#import "NativeNameController.h"
 
 @implementation NativeModule
 
@@ -21,6 +22,15 @@ RCT_EXPORT_METHOD(nativeStackPop){
   dispatch_async(dispatch_get_main_queue(), ^{
     UINavigationController * nav = (UINavigationController *)[UIApplication sharedApplication].delegate.window.rootViewController;
     [nav popViewControllerAnimated:YES];
+  });
+}
+
+RCT_EXPORT_METHOD(nativeRouter:(NSString *)routerName){
+  dispatch_async(dispatch_get_main_queue(), ^{
+    UINavigationController * nav = (UINavigationController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+    if ([routerName isEqualToString:@"deivceName"]) {
+      [nav pushViewController:[[NativeNameController alloc]init] animated:YES];
+    }
   });
 }
 
