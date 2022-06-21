@@ -21,7 +21,7 @@ export default class HomePage extends Component {
             fadeInDuration={2000}
             fadeOutDuration={1000}/>
         <Button
-          title="进入插件设置页"
+          title="进入插件设置页3"
           onPress={() => this.props.navigation.navigate("Setting")}
         />
         <Image source={require('../image/robot.png')}  style={styles.img}  />

@@ -19,6 +19,7 @@
 		3EDFC76928364E78008E95A9 /* RNNativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFC76828364E78008E95A9 /* RNNativeView.m */; };
 		7699B88040F8A987B510C191 /* libPods-RaactNativeTest-RaactNativeTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RaactNativeTest-RaactNativeTestTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		FB2CB02928607A5E001F9C5D /* ConfigPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB02828607A5E001F9C5D /* ConfigPlugIn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RaactNativeTest/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-RaactNativeTest-RaactNativeTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaactNativeTest-RaactNativeTestTests.release.xcconfig"; path = "Target Support Files/Pods-RaactNativeTest-RaactNativeTestTests/Pods-RaactNativeTest-RaactNativeTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FB2CB02728607A5E001F9C5D /* ConfigPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigPlugIn.h; sourceTree = "<group>"; };
+		FB2CB02828607A5E001F9C5D /* ConfigPlugIn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigPlugIn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				3EDFC75E2834D3F6008E95A9 /* HomeController.h */,
 				3EDFC75F2834D3F6008E95A9 /* HomeController.m */,
+				FB2CB02728607A5E001F9C5D /* ConfigPlugIn.h */,
+				FB2CB02828607A5E001F9C5D /* ConfigPlugIn.m */,
 				3EDFC7612834FB67008E95A9 /* ReactNativeController.h */,
 				3EDFC7622834FB67008E95A9 /* ReactNativeController.m */,
 				3EDFC76428363633008E95A9 /* NativeModule.h */,
@@ -441,6 +446,7 @@
 				3EDFC76928364E78008E95A9 /* RNNativeView.m in Sources */,
 				3EDFC76628363633008E95A9 /* NativeModule.m in Sources */,
 				3EAB185A283B6A4300B0C33F /* NativeNameController.m in Sources */,
+				FB2CB02928607A5E001F9C5D /* ConfigPlugIn.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5669FHQ987;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RaactNativeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,7 +532,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wenfengRNTest.shen;
 				PRODUCT_NAME = RaactNativeTest;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -540,6 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5669FHQ987;
 				INFOPLIST_FILE = RaactNativeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -550,7 +558,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wenfengRNTest.shen;
 				PRODUCT_NAME = RaactNativeTest;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

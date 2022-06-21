@@ -9,10 +9,17 @@
 #import "ReactNativeController.h"
 #import <React/RCTRootView.h>
 #import <AFNetworking/AFNetworking.h>
+#import "ConfigPlugIn.h"
 @interface HomeController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong)NSArray * dataSource;
 @property(nonatomic,strong)UITableView * tableView;
+
+
+@property(nonatomic,strong)NSString * localHost;
+@property(nonatomic,strong)NSString * moduleName;
+
+
 
 @end
 
@@ -22,15 +29,34 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"APP首页";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor blackColor]}];
+  
+  UIButton * rightBt = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+  [rightBt setTitle:@"设置" forState:UIControlStateNormal];
+  [rightBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  [rightBt addTarget:self action:@selector(gotoSetting) forControlEvents:UIControlEventTouchUpInside];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBt];
     self.dataSource = @[@"打开插件"];
     [self.view addSubview:self.tableView];
   
     // Do any additional setup after loading the view.
 }
 
+-(void)gotoSetting{
+  ConfigPlugIn * PlugInSet = [[ConfigPlugIn alloc] init];
+  __weak typeof(self) weakSelf = self;
+  [PlugInSet setBlcok:^(NSString * _Nonnull localHost, NSString * _Nonnull moduleName) {
+    weakSelf.localHost = localHost;
+    weakSelf.moduleName = moduleName;
+    
+  }];
+  [self.navigationController pushViewController:PlugInSet animated:YES];
+}
+
 -(UITableView *)tableView{
   if (_tableView == nil) {
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 80, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
@@ -47,13 +73,14 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
     if (cell == nil) {
       cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellId"];
+//      cell.backgroundColor = [UIColor whiteColor];
     }
   cell.textLabel.text = self.dataSource[indexPath.row];
   return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
   NSString * operation = self.dataSource[indexPath.row];
   
   if ([operation isEqualToString:@"下载插件包"]) {
@@ -65,19 +92,24 @@
 }
 
 -(void)openPlugin{
+  if (!self.localHost || !self.moduleName) {
+    return;
+  }
   
   ReactNativeController * reactNavtiveVC = [[ReactNativeController alloc]init];
   
   NSURL *jsCodeLocation;
   
-  #if DEBUG
-    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
-  #else
-    jsCodeLocation = [NSURL URLWithString:[self getPluginPathWithPluginId:@"12345"]];
-  #endif
+//  #if DEBUG
+  NSString * url = [NSString stringWithFormat:@"http://%@:8081/index.bundle?platform=ios",self.localHost];
+  
+    jsCodeLocation = [NSURL URLWithString:url];
+//  #else
+//    jsCodeLocation = [NSURL URLWithString:[self getPluginPathWithPluginId:@"12345"]];
+//  #endif
 //RNDemo RNHighScores
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                   moduleName: @"RNHighScores"
+                                   moduleName: self.moduleName
                             initialProperties: nil
                                 launchOptions: nil];
   reactNavtiveVC.view = rootView;
